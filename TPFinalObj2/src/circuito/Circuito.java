@@ -2,8 +2,8 @@ package circuito;
 
 import java.util.List;
 
-import Buque.Terminal;
-import Tramo.Tramo;
+import buque.Terminal;
+import tramo.Tramo;
 import viaje.Viaje;
 
 public class Circuito {

@@ -1,6 +1,6 @@
-package Tramo;
+package tramo;
 
-import Buque.Terminal;
+import buque.Terminal;
 
 public class Tramo {
 	private Terminal terminalSalida;

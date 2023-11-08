@@ -1,4 +1,4 @@
-package Buque;
+package buque;
 
 public interface Terminal {
 	public GPS getUbicacion();

@@ -3,8 +3,8 @@ package viaje;
 import java.time.LocalDate;
 import java.util.List;
 
-import Buque.Buque;
-import Buque.Terminal;
+import buque.Buque;
+import buque.Terminal;
 import circuito.Circuito;
 
 public class Viaje {

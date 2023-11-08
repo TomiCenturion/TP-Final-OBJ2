@@ -1,4 +1,4 @@
-package Buque;
+package buque;
 
 public class Inbound extends EstadoBuque{
 

@@ -1,4 +1,4 @@
-package Buque;
+package buque;
 
 public class Arrived extends EstadoBuque{
 
