@@ -14,14 +14,6 @@ public class Viaje {
 	private LocalDate fechaSalida;
 	private Circuito circuito;
 	
-	
-	public Viaje(Buque buque, LocalDate fechaSalida, Circuito circuito) {
-		this.buque = buque;
-		this.fechaSalida = fechaSalida;
-		this.circuito = circuito;
-		
-	}
-	
 	public Buque getBuque() {
 		// TODO Auto-generated method stub
 		return buque;
@@ -40,5 +32,13 @@ public class Viaje {
 	public boolean contieneA(Terminal tdestino) {
 		// TODO Auto-generated method stub
 		return circuito.contieneTerminal(tdestino);
+	}
+
+	public double precioDesdeHasta(Terminal a, Terminal b) {
+		return circuito.precioDesdeHasta(a, b);
+	}
+
+	public LocalDate getFechaSalida() {
+		return fechaSalida;
 	}
 }
