@@ -30,9 +30,13 @@ public class Circuito {
 
 	        return totalDeHoras;
 	    }
+	    
+	    public List<Tramo> getTramos(){
+	    	return tramos;
+	    }
 
 	    private Tramo encontrarTramo(Terminal salida) {
-	        return tramos.stream()
+	        return this.getTramos().stream()
 	                     .filter(t -> t.getTerminalSalida() == salida)
 	                     .findFirst()
 	                     .orElse(null);
