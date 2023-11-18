@@ -4,6 +4,9 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.chrono.ChronoLocalDate;
 
+import operacion.Consignee;
+import operacion.Importacion;
+
 
 
 public class TurnoImportacion {
