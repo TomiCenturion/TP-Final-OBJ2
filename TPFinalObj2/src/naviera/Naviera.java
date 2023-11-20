@@ -4,8 +4,7 @@ import java.util.List;
 
 import buque.Terminal;
 import viaje.Viaje;
-import naviera.Circuito;
-
+import circuito.Circuito;
 
 public class Naviera {
 	
@@ -26,9 +25,13 @@ public class Naviera {
         //SEGUN BUTTI EL MEJOR TIEMPO ES EL MENOR *
         int buscarCircuitoRandom = circuitos.stream()
                 .filter(c->c.contieneTerminal(terminalGestionada) && c.contieneTerminal(tdestino))
-                .mapToInt(c -> c.tiempoDesdeHastaEnHoras(terminalGestionada, tdestino))
-                .min().getAsInt();
+                .map(c -> c.tiempoDesdeHastaEnHoras(terminalGestionada, tdestino))
+                .min(Integer :: compareTo).get();
         return buscarCircuitoRandom;
     }
+    
+    public void registrarCircuitos(Circuito c) {
+		circuitos.add(c); //Consultado con ayudante 
+	}
 
 }

@@ -8,7 +8,6 @@ import operacion.Consignee;
 import operacion.Importacion;
 
 
-
 public class TurnoImportacion {
 	private LocalDate horaDeLlegada;
 	private Consignee consignee;

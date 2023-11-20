@@ -1,7 +1,8 @@
 package buque;
 
+
 public interface Terminal {
 	public GPS getUbicacion();
-	
-	public void enviarMailATodos(Buque b);
+	public void enviarMailATodosConsignee(Buque b);
+	public void enviarMailATodosSheepers(Buque b);
 }

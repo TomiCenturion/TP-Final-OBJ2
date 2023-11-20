@@ -1,8 +1,11 @@
 package operacion;
 
-import buque.Terminal;
-import viaje.Viaje;
+import java.time.LocalDate;
 
+import buque.Terminal;
+import container.Container;
+import factura.Factura;
+import viaje.Viaje;
 
 public class Importacion extends Operacion{
 
@@ -11,8 +14,8 @@ public class Importacion extends Operacion{
     private Terminal terminalLlegada;
 
 
-    public Importacion(Viaje viaje, Consignee consignee, Terminal terminalOrigen, Terminal terminalLlegada) {
-        super( viaje);
+    public Importacion( Viaje viaje, Consignee consignee, Terminal terminalOrigen, Terminal terminalLlegada,Container container, LocalDate fecha) {
+        super( viaje,container,fecha);
         this.consignee = consignee;
         this.terminalOrigen = terminalOrigen;
         this.terminalLlegada = terminalLlegada;

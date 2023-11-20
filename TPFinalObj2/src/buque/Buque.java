@@ -19,10 +19,12 @@ public class Buque{
 		return ubicacion.distanciaHasta(terminal.getUbicacion());
 	}
 	
-	public void enviarMail() {
-		terminal.enviarMailATodos(this);
+	public void enviarMailLlegada() {
+		terminal.enviarMailATodosConsignee(this);
 	}
-
+	public void enviarMailSalida() {
+		terminal.enviarMailATodosSheepers(this);
+	}
 	public String getNombre() {
 		// TODO Auto-generated method stub
 		return nombre;

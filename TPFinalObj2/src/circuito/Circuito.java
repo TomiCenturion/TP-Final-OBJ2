@@ -1,24 +1,18 @@
 package circuito;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import buque.Terminal;
 import tramo.Tramo;
 import viaje.Viaje;
 
+
+
 public class Circuito {
 	private List<Tramo> tramos;
 	private List<Viaje> viajes;
 	private Terminal terminalOrigen;
 	
-	
-	
-	public Circuito(Terminal terminalOrigen) {
-		this.tramos = new ArrayList <Tramo>();
-		this.viajes = new ArrayList <Viaje>();
-		this.terminalOrigen = terminalOrigen;
-	}
 	
 	public Terminal getTerminalOrigen() {
 		return terminalOrigen;
@@ -37,13 +31,9 @@ public class Circuito {
 
 	    return totalDeHoras;
 	}
-	
-	public List <Tramo> getTramos(){
-		return tramos;
-	}
 
 	private Tramo encontrarTramo(Terminal salida) {
-	    return this.getTramos().stream()
+	    return tramos.stream()
 	                 .filter(t -> t.getTerminalSalida() == salida)
 	                 .findFirst()
 	                 .orElse(null);
@@ -80,6 +70,6 @@ public class Circuito {
 
 	public boolean contieneTerminal(Terminal terminalGestionada) {
 		// TODO Auto-generated method stub
-		return this.getTramos().stream().anyMatch(t->t.tieneLaTerminal(terminalGestionada));
+		return tramos.stream().anyMatch(t->t.tieneLaTerminal(terminalGestionada));
 	}
 }

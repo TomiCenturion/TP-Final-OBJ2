@@ -3,6 +3,8 @@ import java.time.LocalDate;
 
 import buque.Terminal;
 import operacion.Sheeper;
+import tpFinal2023o2.Container;
+import tpFinal2023o2.Factura;
 import viaje.Viaje;
 
 public class Exportacion extends Operacion {
@@ -10,10 +12,9 @@ public class Exportacion extends Operacion {
 	private Sheeper sheeper;
     private Terminal tdestino;
     private Terminal tOrigen;
-    private LocalDate fechaSalida;
 
-	 public Exportacion(Viaje viaje, Sheeper sheeper, Terminal tOrigen, Terminal tdestino) {
-	        super(viaje);
+	 public Exportacion(Viaje viaje, Sheeper sheeper, Terminal tOrigen, Terminal tdestino, Container contenedor, LocalDate fecha) {
+	        super(viaje,contenedor,fecha);
 	        this.sheeper = sheeper;
 	        this.tOrigen = tOrigen;
 	        this.tdestino = tdestino;
@@ -27,7 +28,7 @@ public class Exportacion extends Operacion {
 
 	@Override
 	public void enviarFactura() {
-		// TODO Auto-generated method s
+		this.sheeper.enviarFactura(new Factura(this.getServicios(),this.precio()));
 	}
 	
 	@Override

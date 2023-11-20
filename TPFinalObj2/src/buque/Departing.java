@@ -6,7 +6,7 @@ public class Departing extends EstadoBuque {
 	public void verificarEstado(Buque b) {
 		if(b.distanciaTerrminal() > 1) {
 			b.setEstado(new Outbound());
-			b.enviarMail();
+			b.enviarMailSalida();
 		}
 		
 	}

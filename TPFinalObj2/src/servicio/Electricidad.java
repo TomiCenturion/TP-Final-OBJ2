@@ -1,5 +1,6 @@
 package servicio;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
@@ -12,8 +13,8 @@ public class Electricidad extends Servicio {
     
     
     
-    public Electricidad(double precioFijoPorkw, LocalDateTime fechaInicio, LocalDateTime fechaFin, int cantidadKW) {
-        super();
+    public Electricidad(double precioFijoPorkw, LocalDateTime fechaInicio, LocalDateTime fechaFin, int cantidadKW,LocalDate fecha) {
+        super(fecha);
         this.precioFijoPorkw = precioFijoPorkw;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;

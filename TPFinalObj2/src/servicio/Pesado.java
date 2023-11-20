@@ -1,13 +1,15 @@
 package servicio;
 
+import java.time.LocalDate;
+
 public class Pesado extends Servicio {
 	private int peso;
     private double precioFijo;
     
     
     
-    public Pesado(int peso, double precioFijo) {
-        super();
+    public Pesado(int peso, double precioFijo,LocalDate fecha) {
+        super(fecha);
         this.peso = peso;
         this.precioFijo = precioFijo;
     }

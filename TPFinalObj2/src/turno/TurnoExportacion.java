@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import buque.Terminal;
 import operacion.Sheeper;
 import viaje.Viaje;
+import container.Container;
 
 
 public class TurnoExportacion { //turno exportacion, tiene funcionalidades que solo son para exportar
@@ -16,6 +17,7 @@ public class TurnoExportacion { //turno exportacion, tiene funcionalidades que s
 	private Container container;
 	private String conductor;
 	private String camion;
+	
 	
 	public TurnoExportacion(Viaje viaje, Sheeper sheeper, LocalDateTime fechaTurno, Terminal terminalLlegada, Container container,
 			String conductor, String camion) {
@@ -69,7 +71,6 @@ public class TurnoExportacion { //turno exportacion, tiene funcionalidades que s
 
 	public boolean verificarCamionConductorYTurnoCorrecto(String conductorA, String camionB, LocalDateTime fecha) {
 		long diferenciaDeHoras = Duration.between(fecha, fechaTurno).toHours();
-		return conductorA ==  this.conductor && camionB == this.camion && diferenciaDeHoras > 3   ;
-		
+		return conductorA.equals(this.conductor)  && camionB.equals(this.camion)  && diferenciaDeHoras < 3   ;		
 	}
 }

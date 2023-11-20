@@ -1,5 +1,7 @@
 package servicio;
 
+import java.time.LocalDate;
+
 public class Almacenamiento extends Servicio {
 	
 	private int diasDeAlmacenamiento;
@@ -7,8 +9,8 @@ public class Almacenamiento extends Servicio {
     
     
     
-    public Almacenamiento(int diasDeAlmacenamiento, double precioFijo) {
-        super();
+    public Almacenamiento(int diasDeAlmacenamiento, double precioFijo,LocalDate fecha) {
+        super(fecha);
         this.diasDeAlmacenamiento = diasDeAlmacenamiento;
         this.precioFijo = precioFijo;
     }
