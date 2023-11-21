@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import buque.Arrived;
 import buque.Buque;
+import buque.Departing;
 import buque.EstadoBuque;
 import buque.GPS;
 import buque.Inbound;
@@ -81,7 +82,7 @@ class BuqueTest {
 
 
         
-        assertEquals(buque.getEstado().getClass(), Working.class);
+        assertEquals(buque.getEstado().getClass(), Departing.class);
 	}
 	
 	

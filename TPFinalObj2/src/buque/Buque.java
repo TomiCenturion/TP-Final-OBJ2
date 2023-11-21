@@ -7,7 +7,7 @@ public class Buque{
 	private Terminal terminal;
 	private String nombre;
 
-	public Buque(EstadoBuque estado, GPS ubicacion, Terminal terminal, String nombre) {
+	public Buque(GPS ubicacion, Terminal terminal, String nombre) {
 		super();
 		this.setEstado(new Departing());//precondicion un buque arranca siempre saliendo de una terminal vacio	
 		this.ubicacion = ubicacion;
@@ -15,9 +15,6 @@ public class Buque{
 		this.nombre = nombre;
 		
 	}
-	
-	
-	
 	
 	public GPS getUbicacion() {
 		return ubicacion;
@@ -27,31 +24,17 @@ public class Buque{
 		this.ubicacion = ubicacion;
 	}
 
-	public Terminal getTerminal() {
-		return terminal;
-	}
-
-
 	public void setTerminal(Terminal terminal) {
 		this.terminal = terminal;
 	}
-
-
-
 
 	public EstadoBuque getEstado() {
 		return estado;
 	}
 
-
-
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-
-
 
 	public void verificarEstado() {
 		this.estado.verificarEstado(this);
