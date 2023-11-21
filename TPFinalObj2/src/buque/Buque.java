@@ -1,5 +1,6 @@
 package buque;
 
+
 public class Buque{
 	private EstadoBuque estado;
 	private GPS ubicacion;
@@ -8,10 +9,11 @@ public class Buque{
 
 	public Buque(EstadoBuque estado, GPS ubicacion, Terminal terminal, String nombre) {
 		super();
-		this.estado = estado;
+		this.setEstado(new Departing());//precondicion un buque arranca siempre saliendo de una terminal vacio	
 		this.ubicacion = ubicacion;
 		this.terminal = terminal;
 		this.nombre = nombre;
+		
 	}
 	
 	
