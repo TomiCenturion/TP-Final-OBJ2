@@ -1,5 +1,20 @@
 package TPFinalObj2;
 
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import buque.Arrived;
+import buque.Buque;
+import buque.EstadoBuque;
+import buque.GPS;
+import buque.Inbound;
+import buque.Outbound;
+import buque.Terminal;
+import buque.Working;
 
 class BuqueTest {
 	GPS ubicacion;
@@ -7,6 +22,7 @@ class BuqueTest {
 	Terminal terminal;
 	String nombre;
 	Buque buque;
+	
 	
 	@BeforeEach
 	void setUp() {
@@ -16,7 +32,6 @@ class BuqueTest {
 		when(terminal.getUbicacion()).thenReturn(ubicacionDos);
 		when(ubicacion.distanciaHasta(ubicacionDos)).thenReturn(10);
 		buque = new Buque(ubicacion,terminal,"messi");
-
 	} 
 	
 	
