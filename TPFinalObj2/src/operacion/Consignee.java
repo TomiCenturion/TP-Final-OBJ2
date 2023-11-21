@@ -1,4 +1,6 @@
 package operacion;
+import factura.Factura;
+
 
 public interface Consignee {
 	

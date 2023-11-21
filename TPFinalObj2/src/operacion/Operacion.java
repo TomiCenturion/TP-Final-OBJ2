@@ -3,8 +3,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import servicio.Servicio;
-import tpFinal2023o2.Container;
-import tpFinal2023o2.Pesado;
+import container.Container;
+import servicio.Pesado;
 import viaje.Viaje;
 import container.Container;
 

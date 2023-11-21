@@ -3,8 +3,8 @@ import java.time.LocalDate;
 
 import buque.Terminal;
 import operacion.Sheeper;
-import tpFinal2023o2.Container;
-import tpFinal2023o2.Factura;
+import container.Container;
+import factura.Factura;
 import viaje.Viaje;
 
 public class Exportacion extends Operacion {
