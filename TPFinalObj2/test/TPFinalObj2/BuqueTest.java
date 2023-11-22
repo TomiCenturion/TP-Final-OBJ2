@@ -1,6 +1,7 @@
 package TPFinalObj2;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -84,6 +85,22 @@ public class BuqueTest {
         
         assertEquals(buque.getEstado().getClass(), Departing.class);
 	}
+	//22/11
+	@Test
+	void elBuquePasaDeWorkingADeparting() {
+		when(ubicacion.distanciaHasta(ubicacionDos)).thenReturn(50);
+        buque.verificarEstado();
+        buque.verificarEstado();
+        when(ubicacion.distanciaHasta(ubicacionDos)).thenReturn(0);
+        buque.verificarEstado();
+        buque.comenzarATrabajar();
+        buque.finalizarTrabajo();
+        buque.verificarEstado();
+
+        
+        assertEquals(buque.getEstado().getClass(), Departing.class);
+	}
+	
 	
 	
 }
