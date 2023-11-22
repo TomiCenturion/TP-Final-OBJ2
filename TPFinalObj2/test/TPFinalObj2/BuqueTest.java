@@ -17,7 +17,7 @@ import buque.Outbound;
 import buque.Terminal;
 import buque.Working;
 
-class BuqueTest {
+public class BuqueTest {
 	GPS ubicacion;
 	GPS ubicacionDos;
 	Terminal terminal;

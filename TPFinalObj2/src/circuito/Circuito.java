@@ -1,5 +1,6 @@
 package circuito;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import buque.Terminal;
@@ -14,8 +15,27 @@ public class Circuito {
 	private Terminal terminalOrigen;
 	
 	
+	public Circuito(Terminal terminalOrigen) {
+		super();
+		this.tramos = new ArrayList <Tramo>();
+		this.viajes = new ArrayList <Viaje>();
+		this.terminalOrigen = terminalOrigen;
+	}
+
 	public Terminal getTerminalOrigen() {
 		return terminalOrigen;
+	}
+
+	public List<Viaje> getViajes() {
+		return viajes;
+	}
+	
+	public List <Tramo> getTramos(){
+		return tramos;
+	}
+	
+	public void addTramo(Tramo tramo) {
+		this.getTramos().add(tramo);
 	}
 
 	public int tiempoDesdeHastaEnHoras(Terminal t1, Terminal t2) {

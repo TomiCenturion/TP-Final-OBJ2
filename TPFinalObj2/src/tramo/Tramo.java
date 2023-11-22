@@ -28,11 +28,6 @@ public class Tramo {
 		return terminalLlegada == terminalGestionada;
 	}
 
-	public double precio() {
-		// TODO Auto-generated method stub
-		return precioTramo;
-	}
-
 	public Terminal getTerminalSalida() {
 		return terminalSalida;
 	}

@@ -15,25 +15,9 @@ public class Buque{
 		this.nombre = nombre;
 		
 	}
-	
-	public GPS getUbicacion() {
-		return ubicacion;
-	}
-
-	public void setUbicacion(GPS ubicacion) {
-		this.ubicacion = ubicacion;
-	}
-
-	public void setTerminal(Terminal terminal) {
-		this.terminal = terminal;
-	}
 
 	public EstadoBuque getEstado() {
 		return estado;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
 	}
 
 	public void verificarEstado() {
@@ -54,10 +38,6 @@ public class Buque{
 	}
 	public void enviarMailSalida() {
 		terminal.enviarMailATodosSheepers(this);
-	}
-	public String getNombre() {
-		// TODO Auto-generated method stub
-		return nombre;
 	}
 
 	public void comenzarATrabajar() {
