@@ -9,6 +9,9 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import factura.Factura;
+import servicio.Servicio;
+
 
 class FacturaTest {
 	List<Servicio> servicios;
@@ -47,3 +50,4 @@ class FacturaTest {
 	void aUnaFacturaSeLePuedenPedirElPrecioTotal() {
 		assertEquals(factura.getPrecioTotal(), 14000);
 	}
+}

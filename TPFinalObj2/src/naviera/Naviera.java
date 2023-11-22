@@ -33,5 +33,13 @@ public class Naviera {
     public void registrarCircuitos(Circuito c) {
 		circuitos.add(c); //Consultado con ayudante 
 	}
+    
+    public void agregarViaje(Viaje viaje) {
+    	this.getViajes().add(viaje);
+    }
 
+    
+    public List <Circuito> getCircuitos(){
+    	return this.circuitos;
+    }
 }

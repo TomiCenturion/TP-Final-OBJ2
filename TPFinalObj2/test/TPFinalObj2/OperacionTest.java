@@ -10,6 +10,15 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import buque.Terminal;
+import container.Container;
+import operacion.Consignee;
+import operacion.Exportacion;
+import operacion.Importacion;
+import operacion.Sheeper;
+import servicio.Servicio;
+import viaje.Viaje;
+
 
 class OperacionTest {
 	List<Servicio> servicios;
@@ -54,15 +63,15 @@ class OperacionTest {
     	when(servicioDos.precio()).thenReturn(10d);
     	when(servicioTres.precio()).thenReturn(10d);
     	when(servicioCuatro.precio()).thenReturn(10d);
-    	importacion.agregarServicios(servicioUno);
-    	importacion.agregarServicios(servicioDos);
-    	importacion.agregarServicios(servicioTres);
-    	importacion.agregarServicios(servicioCuatro);
+    	importacion.agregarServicio(servicioUno);
+    	importacion.agregarServicio(servicioDos);
+    	importacion.agregarServicio(servicioTres);
+    	importacion.agregarServicio(servicioCuatro);
     	
-    	exportacion.agregarServicios(servicioUno);
-    	exportacion.agregarServicios(servicioDos);
-    	exportacion.agregarServicios(servicioTres);
-    	exportacion.agregarServicios(servicioCuatro);
+    	exportacion.agregarServicio(servicioUno);
+    	exportacion.agregarServicio(servicioDos);
+    	exportacion.agregarServicio(servicioTres);
+    	exportacion.agregarServicio(servicioCuatro);
     	
 	
     	

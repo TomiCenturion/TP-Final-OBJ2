@@ -11,7 +11,7 @@ import container.Container;
 public abstract class Operacion {
 	
 	private List<Servicio> servicios;
-    private Viaje Viaje;
+    private Viaje viaje;
     private Container container;
 	private LocalDate fecha;
     
@@ -19,7 +19,6 @@ public abstract class Operacion {
     public Operacion(Viaje Viaje,Container container, LocalDate fecha) {
         super();
         this.servicios = new ArrayList<Servicio>();
-        this.Viaje = Viaje;
         this.container = container;
 		this.fecha = fecha;
 		new Pesado(container.getPeso(), 1000d, fecha);
@@ -30,11 +29,15 @@ public abstract class Operacion {
     }
 
     public Viaje getViaje() {
-        return Viaje;
+        return viaje;
     }
 
     public double precio() {
         return servicios.stream().mapToDouble(S->S.precio()).sum() + costoAdicional();
+    }
+    
+    public void agregarServicio(Servicio servicio) {
+    	this.getServicios().add(servicio);
     }
     
     public abstract double costoAdicional(); //template method de consignee y sheeper (precio de servicios)
