@@ -30,6 +30,10 @@ public abstract class Container {
 		return peso;
 	}
 	
+	public int getConsumoWts() {
+		return 0; //method hook
+	}
+	
 	
 	
 	

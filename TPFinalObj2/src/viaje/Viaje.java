@@ -14,12 +14,12 @@ public class Viaje {
 	private LocalDate fechaSalida;
 	private Circuito circuito;
 	
-//	public Viaje(Buque buque, LocalDate fechaSalida, Circuito circuito) {
-//		super();
-//		this.buque = buque;
-//		this.fechaSalida = fechaSalida;
-//		this.circuito = circuito;
-//	}
+	public Viaje(Buque buque, LocalDate fechaSalida, Circuito circuito) {
+		super();
+		this.buque = buque;
+		this.fechaSalida = fechaSalida;
+		this.circuito = circuito;
+	} 
 	
 	public Buque getBuque() {
 		// TODO Auto-generated method stub

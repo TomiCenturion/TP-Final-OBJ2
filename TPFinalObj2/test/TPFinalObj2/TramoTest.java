@@ -30,6 +30,7 @@ public class TramoTest {
 		terminal2 = mock(Terminal.class);
 		when(terminal1.getUbicacion()).thenReturn(ubicacionSalida);
 		when(terminal2.getUbicacion()).thenReturn(ubicacionLlegada);
+		
 		tramo1= new Tramo(terminal1, terminal2, 4,4d);
 		
 	}
@@ -42,7 +43,7 @@ public class TramoTest {
 	
 	@Test 
 	public void test02UnTramoNoTieneUnaTerminalDeLLegada() {
-		assertFalse(tramo1.tieneLaTerminal(terminal1));
+		assertTrue(tramo1.tieneLaTerminal(terminal1));
 	}
 	
 	@Test 
@@ -61,4 +62,8 @@ public class TramoTest {
 		assertEquals(tramo1.getTiempoEstimadoEnHoras(), 4);
 	}
 	
+	@Test
+	public void cuandoPidoElPrecioDelTramoMeDevuelveElCorrecto() {
+		assertTrue(tramo1.getPrecioTramo() == 4d);
+	}
 }

@@ -51,8 +51,8 @@ class NavieraTest {
 		naviera = new Naviera();
 		naviera.registrarCircuitos(circuitoUno);
 		naviera.registrarCircuitos(circuitoTres);
-		naviera.agregarViaje(viajeUno);
-		naviera.agregarViaje(viajeTres);
+		naviera.agregarViajes(viajeUno);
+		naviera.agregarViajes(viajeTres);
 		
 	}
 	
@@ -66,15 +66,13 @@ class NavieraTest {
 	}
 	@Test
 	void puedenAgregarViajesALaNaviera() {
-		naviera.agregarViaje(viajeDos);
+		naviera.agregarViajes(viajeDos);
 		assertTrue(naviera.getViajes().contains(viajeDos));
 	}
 
-	
-	
-	//@Test
-	//void mejorTiempoTest() {
-		//assertEquals(naviera.getMejorTiempoHasta(terminalUno, terminalDos), circuitoUno.tiempoDesdeHastaEnHoras(terminalUno, terminalDos));
-	//}
+	@Test
+	void mejorTiempoTest() {
+		assertEquals(naviera.getMejorTiempoHasta(terminalUno, terminalDos), circuitoUno.tiempoDesdeHastaEnHoras(terminalUno, terminalDos));
+	}
 	
 }

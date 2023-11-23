@@ -10,6 +10,7 @@ public class ReeferC extends Container {
 		this.consumoWts = consumoWts;
 	}
 
+	@Override
 	public int getConsumoWts() {
 		return consumoWts;
 	}

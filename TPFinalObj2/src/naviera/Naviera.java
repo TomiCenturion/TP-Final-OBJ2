@@ -42,9 +42,9 @@ public class Naviera {
 		circuitos.add(c); //Consultado con ayudante 
 	}
     
-    public void agregarViaje(Viaje viaje) {
-    	this.getViajes().add(viaje);
-    }
+    public void agregarViajes(Viaje v) {
+		viajes.add(v); //Consultado con ayudante 
+	}
 
     
     public List <Circuito> getCircuitos(){

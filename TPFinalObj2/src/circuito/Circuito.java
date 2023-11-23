@@ -10,26 +10,23 @@ import viaje.Viaje;
 
 public class Circuito {
 	private List<Tramo> tramos;
-	private List<Viaje> viajes;
 	private Terminal terminalOrigen;
-	
+	 
+
+
+	public Circuito(List<Tramo> tramos, Terminal terminalOrigen) {
+		super();
+		this.tramos = tramos;
+		this.terminalOrigen = terminalOrigen;
+	}
 
 
 	public Terminal getTerminalOrigen() {
 		return terminalOrigen;
 	}
 
-	public List<Viaje> getViajes() {
-		return viajes;
-	}
 	
-	public List <Tramo> getTramos(){
-		return tramos;
-	}
 	
-	public void addTramo(Tramo tramo) {
-		this.getTramos().add(tramo);
-	}
 
 	public int tiempoDesdeHastaEnHoras(Terminal t1, Terminal t2) {
 		//PRECONDICION : Existe un camino posible desde la t1 hasta la t2
@@ -40,7 +37,7 @@ public class Circuito {
 	    while (tramoActual.getTerminalLlegada() != t2) {
 	        tramoActual = encontrarTramo(tramoActual.getTerminalLlegada());
 	        totalDeHoras += tramoActual.getTiempoEstimadoEnHoras();
-	    }
+	    } 
 
 	    return totalDeHoras;
 	}
