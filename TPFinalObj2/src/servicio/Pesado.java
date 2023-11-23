@@ -15,9 +15,9 @@ public class Pesado extends Servicio {
     }
 
 
-    public double getPeso() {
-        return peso;
-    }
+//    public double getPeso() {
+//        return peso;
+//    }
 
 
     @Override

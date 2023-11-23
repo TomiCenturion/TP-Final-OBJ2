@@ -32,9 +32,9 @@ class ServicioTest {
 		servicioLavadoExcedido = new Lavado(12000, 12500, 100, fecha);
 		servicioLavado= new Lavado(12000, 12500, 30, fecha);
 		servicioPesado = new Pesado(200, 590, fecha);
-		servicioElectricidad = new Electricidad(120, fechaInicio, fechaFin, 3, fecha);
+		servicioElectricidad = new Electricidad(120, fechaInicio, null, 3, fecha);
 		servicioAlmacenamiento = new  Almacenamiento(20,30, fecha);
-	}
+	} 
 	
 	@Test
 	void testPrecioDeLavadoCapacidadExcedidad() {
@@ -50,7 +50,7 @@ class ServicioTest {
 	}
 	@Test
 	void cuandoPreguntoElPrecioDeElectricidadEs60120() {
-		assertEquals(Math.round(servicioElectricidad.precio()), -60120);
+		assertEquals(Math.round(servicioElectricidad.precio()),-58320);
 	}
 	@Test
 	void cuandoLePidoElPrecioAUnServicioPesadoMeLoDevuelve() {
