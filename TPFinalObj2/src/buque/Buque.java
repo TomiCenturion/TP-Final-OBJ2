@@ -33,6 +33,11 @@ public class Buque{
 		return ubicacion.distanciaHasta(terminal.getUbicacion());
 	}
 	
+	
+	public String getNombre() {
+		return nombre;
+	}
+
 	public void enviarMailLlegada() {
 		terminal.enviarMailATodosConsignee(this);
 	}

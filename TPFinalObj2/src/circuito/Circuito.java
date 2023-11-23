@@ -8,19 +8,12 @@ import tramo.Tramo;
 import viaje.Viaje;
 
 
-
 public class Circuito {
 	private List<Tramo> tramos;
 	private List<Viaje> viajes;
 	private Terminal terminalOrigen;
 	
-	
-	public Circuito(Terminal terminalOrigen) {
-		super();
-		this.tramos = new ArrayList <Tramo>();
-		this.viajes = new ArrayList <Viaje>();
-		this.terminalOrigen = terminalOrigen;
-	}
+
 
 	public Terminal getTerminalOrigen() {
 		return terminalOrigen;
@@ -51,7 +44,7 @@ public class Circuito {
 
 	    return totalDeHoras;
 	}
-
+ 
 	private Tramo encontrarTramo(Terminal salida) {
 	    return tramos.stream()
 	                 .filter(t -> t.getTerminalSalida() == salida)
@@ -73,6 +66,9 @@ public class Circuito {
 
 	    return totalPrecio;
 }
+	
+	
+	
 
 	public int cantidadIntermediaria(Terminal t1, Terminal t2) {
 		//PRECONDICION : Existe un camino posible desde la t1 hasta la t2

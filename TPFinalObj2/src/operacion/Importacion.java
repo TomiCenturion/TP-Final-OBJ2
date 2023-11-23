@@ -15,8 +15,7 @@ public class Importacion extends Operacion{
 	private Consignee consignee;
     private Terminal terminalOrigen;
     private Terminal terminalLlegada;
-    private List <Servicio> servicios;
-    private Viaje viaje;
+   
  
 
     public Importacion( Viaje viaje, Consignee consignee, Terminal terminalOrigen, Terminal terminalLlegada,Container container, LocalDate fecha) {
@@ -24,7 +23,6 @@ public class Importacion extends Operacion{
         this.consignee = consignee;
         this.terminalOrigen = terminalOrigen;
         this.terminalLlegada = terminalLlegada;
-        this.servicios = new ArrayList <Servicio>();
     }
 
     @Override
@@ -43,21 +41,5 @@ public class Importacion extends Operacion{
     public void enviarFactura() {
         this.consignee.enviarFactura(new Factura(this.getServicios(),this.precio()));
     }
-    
-    @Override
-	public List <Servicio> getServicios(){
-		return servicios;
-	}
-
-	@Override
-	public void agregarServicio(Servicio servicio) {
-		this.getServicios().add(servicio);
-	}
-    
-	
-	@Override
-	public Viaje getViaje() {
-		return viaje;
-	}
 	
 }

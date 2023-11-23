@@ -18,6 +18,7 @@ public abstract class Operacion {
     
     public Operacion(Viaje Viaje,Container container, LocalDate fecha) {
         super();
+        this.viaje = viaje;
         this.servicios = new ArrayList<Servicio>();
         this.container = container;
 		this.fecha = fecha;

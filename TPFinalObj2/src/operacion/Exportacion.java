@@ -15,7 +15,6 @@ public class Exportacion extends Operacion {
 	private Sheeper sheeper;
     private Terminal tdestino;
     private Terminal tOrigen;
-    private List<Servicio> servicios;
 
  
 	 public Exportacion(Viaje viaje, Sheeper sheeper, Terminal tOrigen, Terminal tdestino, Container contenedor, LocalDate fecha) {
@@ -23,7 +22,6 @@ public class Exportacion extends Operacion {
 	        this.sheeper = sheeper;
 	        this.tOrigen = tOrigen;
 	        this.tdestino = tdestino;
-	        this.servicios = new ArrayList<Servicio>();
 	}
 
 	@Override
@@ -42,14 +40,5 @@ public class Exportacion extends Operacion {
         sheeper.enviarMail(mail);
     }
 	
-	@Override
-	public List <Servicio> getServicios(){
-		return servicios;
-	}
-
-	@Override
-	public void agregarServicio(Servicio servicio) {
-		this.getServicios().add(servicio);
-	}
 
 }

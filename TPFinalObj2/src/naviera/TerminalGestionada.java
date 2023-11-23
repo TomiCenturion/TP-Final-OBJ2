@@ -180,15 +180,13 @@ public class TerminalGestionada implements Terminal {
 		
 	
 	public void registrarCamionYConductor(Consignee consignee, String camion, String conductor, LocalDate fecha) throws Exception{
-		TurnoImportacion turno = turnosImportacion.stream().filter(t->t.getConsignee() == consignee && t.getHoraDeLlegada() == fecha).findFirst().get();
+		TurnoImportacion turno = turnosImportacion.stream().filter(t->t.getConsignee() == consignee && t.getHoraDeLlegada().equals(fecha)).findFirst().orElse(null);
 		if(turno != null) {
 			turno.setCamion(camion);
 		turno.setConductor(conductor); 
 		}else {
 			throw new Exception ("No se encontro ningun turno con esa fecha");
 		}
-		
+
 	}
-
-
 }

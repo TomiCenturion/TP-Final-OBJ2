@@ -8,6 +8,17 @@ public class Tramo {
 	private int tiempoEstimadoEnHoras;
 	private double precioTramo;
 	
+	
+	
+	
+	public Tramo(Terminal terminalSalida, Terminal terminalLlegada, int tiempoEstimadoEnHoras, double precioTramo) {
+		super();
+		this.terminalSalida = terminalSalida;
+		this.terminalLlegada = terminalLlegada;
+		this.tiempoEstimadoEnHoras = tiempoEstimadoEnHoras;
+		this.precioTramo = precioTramo;
+	}
+
 	public int getTiempoEstimadoEnHoras() {
 		return tiempoEstimadoEnHoras;
 	}
@@ -16,16 +27,10 @@ public class Tramo {
 		return precioTramo;
 	}
 
-	public Tramo(Terminal terminalSalida, Terminal terminalLlegada, int tiempoEstimadoEnHoras) {
-		super();
-		this.terminalSalida = terminalSalida;
-		this.terminalLlegada = terminalLlegada;
-		this.tiempoEstimadoEnHoras = tiempoEstimadoEnHoras;
-	}
 
 	public boolean tieneLaTerminal(Terminal terminalGestionada) {
 		// TODO Auto-generated method stub
-		return terminalLlegada == terminalGestionada;
+		return terminalLlegada == terminalGestionada || terminalSalida == terminalGestionada;
 	}
 
 	public Terminal getTerminalSalida() {
