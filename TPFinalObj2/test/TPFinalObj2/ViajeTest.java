@@ -67,7 +67,12 @@ public class ViajeTest {
      }
 	
 		
-		
+	@Test
+	void unViajeTieneUnBuque() {
+		assertEquals(viaje1.getBuque(), buque1);
+	}
+     
+     
 
 //
 //		public double precioDesdeHasta(Terminal a, Terminal b) {

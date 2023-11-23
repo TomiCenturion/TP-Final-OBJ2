@@ -358,6 +358,7 @@ class TerminalGestionadaTest {
 //		assertEquals(terminal.getTurnosImportacion().size(),0);	
 
 	}
+
 	
 } 
 

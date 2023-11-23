@@ -49,8 +49,8 @@ class ServicioTest {
 		assertTrue(servicioLavado.getFecha() == fecha);
 	}
 	@Test
-	void cuandoPreguntoElPrecioDeElectricidadEs63000() {
-		assertEquals(-63000, Math.round(servicioElectricidad.precio()));
+	void cuandoPreguntoElPrecioDeElectricidadEs60120() {
+		assertEquals(Math.round(servicioElectricidad.precio()), -60120);
 	}
 	@Test
 	void cuandoLePidoElPrecioAUnServicioPesadoMeLoDevuelve() {

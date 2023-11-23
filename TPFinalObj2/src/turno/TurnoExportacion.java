@@ -49,26 +49,6 @@ public class TurnoExportacion { //turno exportacion, tiene funcionalidades que s
 		return terminalLlegada;
 	}
 
-
-
-	public Container getContainer() {
-		return container;
-	}
-
-
-
-	public String getConductor() {
-		return conductor;
-	}
-
-
-
-	public String getCamion() {
-		return camion;
-	}
-
-
-
 	public boolean verificarCamionConductorYTurnoCorrecto(String conductorA, String camionB, LocalDateTime fecha) {
 		long diferenciaDeHoras = Duration.between(fecha, fechaTurno).toHours();
 		return conductorA == (this.conductor)  && camionB == (this.camion)  && diferenciaDeHoras < 3   ;
