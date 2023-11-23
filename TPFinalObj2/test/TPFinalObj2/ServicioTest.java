@@ -24,18 +24,20 @@ class ServicioTest {
 	LocalDateTime fechaFin;
 	Servicio servicioAlmacenamiento;
 	Servicio servicioElectricidad2;
+	LocalDate fecha2;
 	
 	@BeforeEach
 	void setUp() {
 		fecha = LocalDate.now();
+		fecha2 = LocalDate.of(2023, 11, 23);
 		fechaFin = LocalDateTime.of(2023, 11, 10, 8, 15);
 		fechaInicio = LocalDateTime.of(2023, 11, 30, 8, 15);
 		servicioLavadoExcedido = new Lavado(12000, 12500, 100, fecha);
 		servicioLavado= new Lavado(12000, 12500, 30, fecha);
 		servicioPesado = new Pesado(200, 590, fecha);
-		servicioElectricidad = new Electricidad(120, fechaInicio, null, 3, fecha);
+		servicioElectricidad = new Electricidad(120, fechaInicio, null, 3, fecha2);
 		servicioAlmacenamiento = new  Almacenamiento(20,30, fecha);
-		servicioElectricidad2 = new Electricidad(120, fechaInicio, fechaFin, 3, fecha);
+		servicioElectricidad2 = new Electricidad(120, fechaInicio, fechaFin, 3, fecha2);
 	} 
 	
 	@Test
@@ -51,12 +53,12 @@ class ServicioTest {
 		assertTrue(servicioLavado.getFecha() == fecha);
 	}
 	@Test
-	void cuandoPreguntoElPrecioDeElectricidadEs58320() {
-		assertEquals(Math.round(servicioElectricidad.precio()),58320);
+	void cuandoPreguntoElPrecioDeElectricidadEs57600() {
+		assertEquals(Math.round(servicioElectricidad.precio()),57600);
 	}
 	@Test
 	void cuandoPreguntoElPrecioDeElectricidadTeniendoUnaFechaDeFinEs() {
-		assertEquals(Math.round(servicioElectricidad.precio()),58320);
+		assertEquals(Math.round(servicioElectricidad.precio()),57600);
 	}
 	@Test
 	void cuandoLePidoElPrecioAUnServicioPesadoMeLoDevuelve() {
