@@ -27,7 +27,7 @@ public class Electricidad extends Servicio {
     public double precio() {
          double precioReturn;
         if(fechaFin == null) {
-             precioReturn = (cantidadKW * precioFijoPorkw* ChronoUnit.HOURS.between(fechaInicio, LocalDateTime.now()));
+             precioReturn = (cantidadKW * precioFijoPorkw* Math.abs(ChronoUnit.HOURS.between(fechaInicio, LocalDateTime.now())) );
         }else {
             precioReturn = (cantidadKW * ChronoUnit.HOURS.between(fechaInicio, fechaFin));
         }
