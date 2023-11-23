@@ -1,6 +1,7 @@
 package TPFinalObj2;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 import java.time.LocalDate;
@@ -22,10 +23,12 @@ import estrategiaMejorCircuito.EstrategiaMejorCircuito;
 import estrategiaMejorCircuito.MenorCantidad;
 import estrategiaMejorCircuito.MenorPrecio;
 import estrategiaMejorCircuito.MenorTiempo;
+import factura.Factura;
 import filtro.Filtro;
 import filtro.FiltroAnd;
 import filtro.FiltroFechaDeLlegada;
 import filtro.FiltroFechaDeSalida;
+import filtro.FiltroOr;
 import filtro.FiltroPuertoDestino;
 import naviera.Naviera;
 import naviera.TerminalGestionada;
@@ -290,17 +293,17 @@ class TerminalGestionadaTest {
 		assertFalse(terminal.filtrarViajes(and).contains(viaje4));
 	}
 	//or
-//	@Test
-//	void testDeFiltradoAND() {
-//		Filtro destino = new FiltroPuertoDestino(terminal);
-//		Filtro salida = new FiltroFechaDeSalida(LocalDate.of(2023, 11,17));
-//		Filtro and = new FiltroAnd(salida, destino);
-//		
-//		assertTrue(terminal.filtrarViajes(and).contains(viaje));
-//		assertTrue(terminal.filtrarViajes(and).contains(viaje3));
-//		assertFalse(terminal.filtrarViajes(and).contains(viaje2));
-//		assertFalse(terminal.filtrarViajes(and).contains(viaje4));
-//	}
+	@Test
+	void testDeFiltradoOr() {
+		Filtro destino = new FiltroPuertoDestino(terminal);
+		Filtro salida = new FiltroFechaDeSalida(LocalDate.of(2023, 11,17));
+		Filtro or = new FiltroOr(salida, destino);
+		
+		assertTrue(terminal.filtrarViajes(or).contains(viaje));
+		assertTrue(terminal.filtrarViajes(or).contains(viaje3));
+		assertFalse(terminal.filtrarViajes(or).contains(viaje2));
+		assertFalse(terminal.filtrarViajes(or).contains(viaje4));
+	}
 	
 	@Test
 	void testDeEnvioDeEmailAConsignee() {
@@ -341,8 +344,8 @@ class TerminalGestionadaTest {
 		assertEquals(terminal.getOperaciones().get(buque).size(), 2);
 		
 		terminal.enviarFactura(buque);
-		//verify(consignee).enviarFactura(any(Factura.class));
-		//verify(sheeper).enviarFactura(any(Factura.class));
+		verify(consignee).enviarFactura(any(Factura.class));
+		verify(sheeper).enviarFactura(any(Factura.class));
 	}
 	 
 	@Test

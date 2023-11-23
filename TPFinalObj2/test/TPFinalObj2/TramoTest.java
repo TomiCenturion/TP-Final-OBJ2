@@ -30,7 +30,7 @@ public class TramoTest {
 		terminal2 = mock(Terminal.class);
 		when(terminal1.getUbicacion()).thenReturn(ubicacionSalida);
 		when(terminal2.getUbicacion()).thenReturn(ubicacionLlegada);
-		tramo1= new Tramo(terminal1, terminal2, 4);
+		tramo1= new Tramo(terminal1, terminal2, 4,4d);
 		
 	}
 	
