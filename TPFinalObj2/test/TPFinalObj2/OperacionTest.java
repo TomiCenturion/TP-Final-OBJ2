@@ -1,10 +1,12 @@
 package TPFinalObj2;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -17,6 +19,7 @@ import operacion.Exportacion;
 import operacion.Importacion;
 import operacion.Sheeper;
 import servicio.Servicio;
+import turno.TurnoImportacion;
 import viaje.Viaje;
 
 
@@ -85,5 +88,23 @@ class OperacionTest {
 	void testPrecioExportacion() {
 		assertEquals(servicioUno.precio() +servicioDos.precio() + servicioTres.precio() + servicioCuatro.precio() , exportacion.precio());
 	}
+	
+	
+	 @Test
+	    void verificarExcedenteTest() {
+	        // Crear un mock para ChronoLocalDate
+	        ChronoLocalDate llegadaCamionConductorMock = mock(ChronoLocalDate.class);
+	        when(llegadaCamionConductorMock.isBefore(any())).thenReturn(true);
+
+	        // Crear un objeto TurnoImportacion con valores específicos
+	        LocalDate horaDeLlegada = LocalDate.now();
+	        TurnoImportacion turnoImportacion = new TurnoImportacion(horaDeLlegada, mock(Consignee.class), mock(Importacion.class));
+
+	        // Llamar al método que deseas probar
+	        int resultado = turnoImportacion.verificarExcedente(llegadaCamionConductorMock);
+
+	        // Verificar el resultado esperado (en este ejemplo, asumimos que el resultado es 0)
+	        assertEquals(0, resultado);
+	    }
 
 }

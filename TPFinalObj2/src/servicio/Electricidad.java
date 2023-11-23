@@ -21,7 +21,7 @@ public class Electricidad extends Servicio {
         this.cantidadKW = cantidadKW;
     }
 
-
+ 
 
     @Override
     public double precio() {

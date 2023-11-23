@@ -51,7 +51,7 @@ public class TurnoImportacion {
 		boolean diferenciaDeHoras = horaDeLlegada.isBefore(fecha);
 		return conductor ==  this.conductor && camion == this.camion && diferenciaDeHoras    ;
 	}
-	
+	 
 //	para ver si se paso o cuanto se paso de la fecha
 	public int verificarExcedente(ChronoLocalDate llegadaCamionConductor){
 		long diferenciaDeHoras = Duration.between(llegadaCamionConductor, horaDeLlegada).toHours();
