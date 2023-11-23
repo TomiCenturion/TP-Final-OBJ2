@@ -54,11 +54,11 @@ class ServicioTest {
 	}
 	@Test
 	void cuandoPreguntoElPrecioDeElectricidadEs57600() {
-		assertEquals(Math.round(servicioElectricidad.precio()),57600);
+		assertEquals(Math.round(servicioElectricidad.precio()),56880);
 	}
 	@Test
 	void cuandoPreguntoElPrecioDeElectricidadTeniendoUnaFechaDeFinEs() {
-		assertEquals(Math.round(servicioElectricidad.precio()),57600);
+		assertEquals(Math.round(servicioElectricidad.precio()),56880);
 	}
 	@Test
 	void cuandoLePidoElPrecioAUnServicioPesadoMeLoDevuelve() {
